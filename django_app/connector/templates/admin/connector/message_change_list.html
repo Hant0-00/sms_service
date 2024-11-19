@@ -1,0 +1,19 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+  {% if has_add_permission %}
+    <div class="object-tools">
+      <ul class="object-tools">
+        <!-- Кнопка "Add Message" уже здесь -->
+        {% for item in object_tools %}
+          {{ item }}
+        {% endfor %}
+        <!-- Добавляем кнопку "Daily Count" -->
+        <li>
+          <a href="{% url 'admin:connector_message_daily_count' %}" class="addlink">Daily Count</a>
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+  {{ block.super }}
+{% endblock %}
