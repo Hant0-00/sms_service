@@ -11,9 +11,15 @@ SECRET_KEY = 'django-insecure-89v_!+@k=k5z8&_!ecbk712m2&q_1+4up@e*g*$1ipjnsedro=
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ["16.16.52.233",]
+ALLOWED_HOSTS = ["*"]
 
 load_dotenv(dotenv_path=BASE_DIR.parent.parent / "docker/.env")
+
+SMPP_SERVER_IP = os.getenv('SMPP_SERVER_IP', '0.0.0.0')
+SMPP_SERVER_PORT = int(os.getenv('SMPP_SERVER_PORT', '2775'))
+SMPP_SYSTEM_ID = os.getenv('SMPP_SYSTEM_ID', 'your_system_id')
+SMPP_PASSWORD = os.getenv('SMPP_PASSWORD', 'your_password')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -58,7 +64,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 POSTGRES = os.getenv("POSTGRES", False) in ["True", "TRUE", "true"]
-print(POSTGRES)
+
 if POSTGRES:
     DATABASES = {
         "default": {

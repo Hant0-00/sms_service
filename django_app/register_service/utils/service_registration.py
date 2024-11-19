@@ -7,9 +7,9 @@ from time import time_ns
 from faker import Faker
 from playwright.sync_api import sync_playwright
 
-from django_app.register_service.utils.config_reg import CONFIGS
+from register_service.utils.config_reg import CONFIGS
 from register_service.utils.utils import generate_numbers, generate_proxy
-from django_app.register_service.utils.user_agents import USER_AGENTS
+from register_service.utils.user_agents import USER_AGENTS
 
 
 def register_service(conf, fake, phone_number):
@@ -23,7 +23,7 @@ def register_service(conf, fake, phone_number):
         # }
         # print(proxy)
         # time.sleep(100)
-        browser = chromium.launch(headless=False)
+        browser = chromium.launch(headless=True)
         if conf.get("user-agent", True):
             context = browser.new_context(user_agent=random.choice(USER_AGENTS))
         else:
