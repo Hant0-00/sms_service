@@ -27,18 +27,18 @@ CONFIGS = [
     #     "type": "browser"
     # },
     #  WOOORKING
-    # {
-    #     "service": "Hllucky",
-    #     "code": Hllucky,
-    #     "active": True,
-    #     "type": "browser",
-    # },
-    # {
-    #     "service": "Lch",
-    #     "code": Lch,
-    #     "active": True,
-    #     "type": "browser",
-    # },
+    {
+        "service": "Hllucky",
+        "code": Hllucky,
+        "active": True,
+        "type": "browser",
+    },
+    {
+        "service": "Lch",
+        "code": Lch,
+        "active": True,
+        "type": "browser",
+    },
     # {
     #     "service": "Bigo",
     #     "code": Bigo,
@@ -47,12 +47,12 @@ CONFIGS = [
     #     "type": "browser",
     #
     # },
-    {
-        "service": "Iherb",
-        "code": Iherb,
-        "active": True,
-        "type": "browser"
-
-
-    },
+    # {
+    #     "service": "Iherb",
+    #     "code": Iherb,
+    #     "active": True,
+    #     "type": "browser"
+    #
+    #
+    # },
 ]
